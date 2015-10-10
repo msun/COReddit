@@ -14,6 +14,7 @@
 		34ADA1F01BC9B82B000EE243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1EE1BC9B82B000EE243 /* LaunchScreen.storyboard */; };
 		34ADA1FB1BC9B82B000EE243 /* CORedditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA1FA1BC9B82B000EE243 /* CORedditTests.swift */; };
 		34ADA2061BC9B82B000EE243 /* CORedditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2051BC9B82B000EE243 /* CORedditUITests.swift */; };
+		34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		34ADA2011BC9B82B000EE243 /* CORedditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CORedditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ADA2051BC9B82B000EE243 /* CORedditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CORedditUITests.swift; sourceTree = "<group>"; };
 		34ADA2071BC9B82B000EE243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		34ADA1E41BC9B82B000EE243 /* COReddit */ = {
 			isa = PBXGroup;
 			children = (
+				34ADA2131BC9BE39000EE243 /* lib */,
 				34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */,
 				34ADA1E71BC9B82B000EE243 /* ViewController.swift */,
 				34ADA1E91BC9B82B000EE243 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				34ADA2071BC9B82B000EE243 /* Info.plist */,
 			);
 			path = CORedditUITests;
+			sourceTree = "<group>";
+		};
+		34ADA2131BC9BE39000EE243 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */,
 				34ADA1E81BC9B82B000EE243 /* ViewController.swift in Sources */,
 				34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */,
 			);
