@@ -39,21 +39,21 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-X2-5jr">
-                                                    <rect key="frame" x="80" y="8" width="34" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="80" y="8" width="504" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksY-EX-WUW">
-                                                    <rect key="frame" x="80" y="37" width="44" height="17"/>
+                                                    <rect key="frame" x="80" y="38" width="504" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e64-pb-cmk">
-                                                    <rect key="frame" x="80" y="62" width="52" height="17"/>
+                                                    <rect key="frame" x="80" y="63" width="504" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -61,9 +61,12 @@
                                                 <constraint firstItem="e64-pb-cmk" firstAttribute="top" secondItem="ksY-EX-WUW" secondAttribute="bottom" constant="8" symbolic="YES" id="39k-Kf-Wh0"/>
                                                 <constraint firstItem="ksY-EX-WUW" firstAttribute="top" secondItem="Oge-X2-5jr" secondAttribute="bottom" constant="8" symbolic="YES" id="KX2-wf-7mW"/>
                                                 <constraint firstItem="Oge-X2-5jr" firstAttribute="top" secondItem="K0P-Y4-pZm" secondAttribute="topMargin" id="M33-G4-sEc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e64-pb-cmk" secondAttribute="trailing" constant="8" id="TIu-P9-ozV"/>
                                                 <constraint firstItem="e64-pb-cmk" firstAttribute="leading" secondItem="bxr-Xd-erL" secondAttribute="trailing" constant="8" symbolic="YES" id="ZOE-Ja-fVd"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="bxr-Xd-erL" secondAttribute="leading" id="ZqG-eI-xdQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ksY-EX-WUW" secondAttribute="trailing" constant="8" id="fh3-Rr-Vrd"/>
                                                 <constraint firstItem="bxr-Xd-erL" firstAttribute="top" secondItem="K0P-Y4-pZm" secondAttribute="topMargin" id="gqN-M9-k1C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Oge-X2-5jr" secondAttribute="trailing" constant="8" id="hco-ev-d3m"/>
                                                 <constraint firstItem="ksY-EX-WUW" firstAttribute="leading" secondItem="bxr-Xd-erL" secondAttribute="trailing" constant="8" symbolic="YES" id="vpV-hz-Afk"/>
                                                 <constraint firstItem="Oge-X2-5jr" firstAttribute="leading" secondItem="bxr-Xd-erL" secondAttribute="trailing" constant="8" symbolic="YES" id="wFe-SR-iSn"/>
                                             </constraints>

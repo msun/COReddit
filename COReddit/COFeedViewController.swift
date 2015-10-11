@@ -10,6 +10,8 @@ import UIKit
 
 class COFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    
+    private var posts : JSON?
 
     private struct Constants {
         static let navTitle = "/r/iOS/"
@@ -41,9 +43,7 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.tableFooterView = UIView(frame: CGRectZero)
 
         getJSONFromURL(Constants.subredditJsonUrl){[unowned self] (json: JSON) in
-            //print(json)
-            print("hello")
-            
+            self.posts = json["data"]["children"]
             dispatch_async(dispatch_get_main_queue(), { self.tableView.reloadData() })
         }
     }
@@ -52,17 +52,27 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.feedCellIdentifier, forIndexPath:indexPath) as! COFeedCell
-        
-        //cell.postImage =
-        cell.titleLabel.text = "Title1"
-        cell.authorLabel.text = "Author1"
-        cell.createdLabel.text = "Created1"
+        cell.postImage = nil
+        cell.titleLabel.text = nil
+        cell.authorLabel.text = nil
+        cell.createdLabel.text = nil
+
+        if let post = posts?[indexPath.row]["data"] {
+            //let postId = post["id"].string
+            //cell.postImage = // remember to check id when return
+            cell.titleLabel.text = post["title"].string
+            cell.authorLabel.text = post["author"].string
+            if let created = post["created"].int {
+                cell.createdLabel.text = String(created)
+                
+            }
+        }
 
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts != nil ? posts!.count : 0
     }
     
     // MARK: - UITableViewDelegate
