@@ -38,6 +38,8 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
         
         title = Constants.navTitle
 
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self;
         tableView.delegate = self;
         tableView.tableFooterView = UIView(frame: CGRectZero)
