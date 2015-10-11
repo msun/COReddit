@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */; };
-		34ADA1E81BC9B82B000EE243 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA1E71BC9B82B000EE243 /* ViewController.swift */; };
 		34ADA1EB1BC9B82B000EE243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1E91BC9B82B000EE243 /* Main.storyboard */; };
 		34ADA1ED1BC9B82B000EE243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */; };
 		34ADA1F01BC9B82B000EE243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1EE1BC9B82B000EE243 /* LaunchScreen.storyboard */; };
 		34ADA1FB1BC9B82B000EE243 /* CORedditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA1FA1BC9B82B000EE243 /* CORedditTests.swift */; };
 		34ADA2061BC9B82B000EE243 /* CORedditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2051BC9B82B000EE243 /* CORedditUITests.swift */; };
 		34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		34ADA2171BC9BEF9000EE243 /* COFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		34ADA2191BCA09D4000EE243 /* COFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2181BCA09D4000EE243 /* COFeedCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		34ADA1E21BC9B82B000EE243 /* COReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		34ADA1E71BC9B82B000EE243 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		34ADA1EA1BC9B82B000EE243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34ADA1EF1BC9B82B000EE243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		34ADA2051BC9B82B000EE243 /* CORedditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CORedditUITests.swift; sourceTree = "<group>"; };
 		34ADA2071BC9B82B000EE243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COFeedViewController.swift; sourceTree = "<group>"; };
+		34ADA2181BCA09D4000EE243 /* COFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COFeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,11 @@
 			children = (
 				34ADA2131BC9BE39000EE243 /* lib */,
 				34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */,
-				34ADA1E71BC9B82B000EE243 /* ViewController.swift */,
+				34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */,
+				34ADA2181BCA09D4000EE243 /* COFeedCell.swift */,
 				34ADA1E91BC9B82B000EE243 /* Main.storyboard */,
-				34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */,
 				34ADA1EE1BC9B82B000EE243 /* LaunchScreen.storyboard */,
+				34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */,
 				34ADA1F11BC9B82B000EE243 /* Info.plist */,
 			);
 			path = COReddit;
@@ -267,7 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */,
-				34ADA1E81BC9B82B000EE243 /* ViewController.swift in Sources */,
+				34ADA2191BCA09D4000EE243 /* COFeedCell.swift in Sources */,
+				34ADA2171BC9BEF9000EE243 /* COFeedViewController.swift in Sources */,
 				34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
