@@ -52,6 +52,7 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.feedCellIdentifier, forIndexPath:indexPath) as! COFeedCell
+        
         cell.postImage = nil
         cell.titleLabel.text = nil
         cell.authorLabel.text = nil
@@ -63,8 +64,11 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
             cell.titleLabel.text = post["title"].string
             cell.authorLabel.text = post["author"].string
             if let created = post["created"].int {
-                cell.createdLabel.text = String(created)
-                
+                let createdTimeInterval : NSTimeInterval = (String(created) as NSString).doubleValue
+                let createdDate = NSDate(timeIntervalSince1970: createdTimeInterval)
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MMM dd - hh:mm:ss a"
+                cell.createdLabel.text = dateFormatter.stringFromDate(createdDate)
             }
         }
 
