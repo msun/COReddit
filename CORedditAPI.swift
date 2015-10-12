@@ -9,7 +9,7 @@
 import Foundation
 
 class CORedditAPI {
-    private class func getJSONFromURL(urlString: String, completionHandler: (JSON) -> Void) {
+    private class func getJSONForURL(urlString: String, completionHandler: (JSON) -> Void) {
         if let url = NSURL(string: urlString){
             let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
                 if error == nil && data != nil {
@@ -21,8 +21,9 @@ class CORedditAPI {
         }
     }
     
-    class func getRedditPostsForSubreddit(subreddit : String,  completionHandler: ([CORedditPost]) -> Void) {
-        getJSONFromURL(subreddit) { (json: JSON) in
+    class func getPostsForSubreddit(subreddit : String,  completionHandler: ([CORedditPost]) -> Void) {
+        let url = "https://www.reddit.com\(subreddit).json"
+        getJSONForURL(url) { (json: JSON) in
             var posts = [CORedditPost]()
 
             if let jsonPosts = json["data"]["children"].array {

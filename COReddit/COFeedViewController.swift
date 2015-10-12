@@ -15,12 +15,11 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
 
     private struct Constants {
         static let feedCellIdentifier = "Feed Cell"
-        static let navTitle = "/r/iOS/"
-        static let subredditJsonUrl = "https://www.reddit.com/r/ios.json"
+        static let subreddit = "/r/iOS"
     }
 
     private func updateData() {
-        CORedditAPI.getRedditPostsForSubreddit(Constants.subredditJsonUrl) { (posts: [CORedditPost]) in
+        CORedditAPI.getPostsForSubreddit(Constants.subreddit) { (posts: [CORedditPost]) in
             dispatch_async(dispatch_get_main_queue(), { [unowned self] in
                 self.posts = posts
                 self.tableView.reloadData()
@@ -33,7 +32,7 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = Constants.navTitle
+        title = Constants.subreddit
 
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
