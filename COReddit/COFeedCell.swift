@@ -9,8 +9,9 @@
 import UIKit
 
 class COFeedCell: UITableViewCell {
-    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var createdLabel: UILabel!
+    var postID : String?
 }

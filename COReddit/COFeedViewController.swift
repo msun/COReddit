@@ -30,6 +30,15 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
             task.resume()
         }
     }
+    
+    private func updateData() {
+        getJSONFromURL(Constants.subredditJsonUrl){[unowned self] (json: JSON) in
+            dispatch_async(dispatch_get_main_queue(), {
+                self.posts = json["data"]["children"]
+                self.tableView.reloadData()
+            })
+        }
+    }
 
     // MARK: - UIViewController Lifecycle
 
@@ -44,10 +53,7 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self;
         tableView.tableFooterView = UIView(frame: CGRectZero)
 
-        getJSONFromURL(Constants.subredditJsonUrl){[unowned self] (json: JSON) in
-            self.posts = json["data"]["children"]
-            dispatch_async(dispatch_get_main_queue(), { self.tableView.reloadData() })
-        }
+        updateData()
     }
     
     // MARK: - UITableViewDataSource
@@ -55,14 +61,29 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.feedCellIdentifier, forIndexPath:indexPath) as! COFeedCell
         
-        cell.postImage = nil
+        cell.postImageView.image = nil
         cell.titleLabel.text = nil
         cell.authorLabel.text = nil
         cell.createdLabel.text = nil
 
         if let post = posts?[indexPath.row]["data"] {
-            //let postId = post["id"].string
-            //cell.postImage = // remember to check id when return
+            cell.postID = post["id"].string
+            
+            //if let imageURLString = post["preview"]["images"][0]["resolutions"][0]["url"].string {
+            if let imageURLString = post["preview"]["images"][0]["source"]["url"].string {
+                if let imageURL = NSURL(string: imageURLString) {
+                    let task = NSURLSession.sharedSession().dataTaskWithURL(imageURL) { (data, response, error) in
+                        if error == nil && data != nil {
+                            let image = UIImage(data: data!)
+                            dispatch_async(dispatch_get_main_queue(), {
+                                cell.postImageView?.image = image
+                            })
+                        }
+                    }
+                    task.resume()
+                }
+            }
+            
             cell.titleLabel.text = post["title"].string
             cell.authorLabel.text = post["author"].string
             if let created = post["created"].int {
