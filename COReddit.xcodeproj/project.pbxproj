@@ -16,6 +16,8 @@
 		34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		34ADA2171BC9BEF9000EE243 /* COFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		34ADA2191BCA09D4000EE243 /* COFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2181BCA09D4000EE243 /* COFeedCell.swift */; settings = {ASSET_TAGS = (); }; };
+		34ADA21C1BCB60CA000EE243 /* CORedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA21B1BCB60CA000EE243 /* CORedditAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		34ADA21E1BCB6641000EE243 /* CORedditPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA21D1BCB6641000EE243 /* CORedditPost.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COFeedViewController.swift; sourceTree = "<group>"; };
 		34ADA2181BCA09D4000EE243 /* COFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COFeedCell.swift; sourceTree = "<group>"; };
+		34ADA21B1BCB60CA000EE243 /* CORedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditAPI.swift; sourceTree = SOURCE_ROOT; };
+		34ADA21D1BCB6641000EE243 /* CORedditPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditPost.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +107,10 @@
 			children = (
 				34ADA2131BC9BE39000EE243 /* lib */,
 				34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */,
-				34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */,
 				34ADA2181BCA09D4000EE243 /* COFeedCell.swift */,
+				34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */,
+				34ADA21B1BCB60CA000EE243 /* CORedditAPI.swift */,
+				34ADA21D1BCB6641000EE243 /* CORedditPost.swift */,
 				34ADA1E91BC9B82B000EE243 /* Main.storyboard */,
 				34ADA1EE1BC9B82B000EE243 /* LaunchScreen.storyboard */,
 				34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */,
@@ -272,7 +278,9 @@
 				34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */,
 				34ADA2191BCA09D4000EE243 /* COFeedCell.swift in Sources */,
 				34ADA2171BC9BEF9000EE243 /* COFeedViewController.swift in Sources */,
+				34ADA21E1BCB6641000EE243 /* CORedditPost.swift in Sources */,
 				34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */,
+				34ADA21C1BCB60CA000EE243 /* CORedditAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

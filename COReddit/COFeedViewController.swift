@@ -11,30 +11,18 @@ import UIKit
 class COFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    private var posts : JSON?
+    private var posts : [CORedditPost]?
 
     private struct Constants {
-        static let navTitle = "/r/iOS/"
         static let feedCellIdentifier = "Feed Cell"
+        static let navTitle = "/r/iOS/"
         static let subredditJsonUrl = "https://www.reddit.com/r/ios.json"
     }
 
-    private func getJSONFromURL(urlString: String, completionHandler: (JSON) -> Void) {
-        if let url = NSURL(string: urlString){
-            let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-                if error == nil && data != nil {
-                    let json = JSON(data: data!)
-                    completionHandler(json)
-                }
-            }
-            task.resume()
-        }
-    }
-    
     private func updateData() {
-        getJSONFromURL(Constants.subredditJsonUrl){[unowned self] (json: JSON) in
-            dispatch_async(dispatch_get_main_queue(), {
-                self.posts = json["data"]["children"]
+        CORedditAPI.getRedditPostsForSubreddit(Constants.subredditJsonUrl) { (posts: [CORedditPost]) in
+            dispatch_async(dispatch_get_main_queue(), { [unowned self] in
+                self.posts = posts
                 self.tableView.reloadData()
             })
         }
@@ -66,27 +54,25 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
         cell.authorLabel.text = nil
         cell.createdLabel.text = nil
 
-        if let post = posts?[indexPath.row]["data"] {
-            cell.postID = post["id"].string
-            
-            //if let imageURLString = post["preview"]["images"][0]["resolutions"][0]["url"].string {
-            if let imageURLString = post["preview"]["images"][0]["source"]["url"].string {
-                if let imageURL = NSURL(string: imageURLString) {
-                    let task = NSURLSession.sharedSession().dataTaskWithURL(imageURL) { (data, response, error) in
-                        if error == nil && data != nil {
-                            let image = UIImage(data: data!)
-                            dispatch_async(dispatch_get_main_queue(), {
-                                cell.postImageView?.image = image
-                            })
-                        }
+        if let post = posts?[indexPath.row] {
+            cell.postID = post.postID
+            cell.titleLabel.text = post.title
+            cell.authorLabel.text = post.author
+
+            if let imageURLString = post.imageURL, imageURL = NSURL(string: imageURLString) {
+                let task = NSURLSession.sharedSession().dataTaskWithURL(imageURL) { (data, response, error) in
+                    if error == nil && data != nil {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            if post.postID == cell.postID {
+                                cell.postImageView?.image = UIImage(data: data!)
+                            }
+                        })
                     }
-                    task.resume()
                 }
+                task.resume()
             }
-            
-            cell.titleLabel.text = post["title"].string
-            cell.authorLabel.text = post["author"].string
-            if let created = post["created"].int {
+
+            if let created = post.created {
                 let createdTimeInterval : NSTimeInterval = (String(created) as NSString).doubleValue
                 let createdDate = NSDate(timeIntervalSince1970: createdTimeInterval)
                 let dateFormatter = NSDateFormatter()
