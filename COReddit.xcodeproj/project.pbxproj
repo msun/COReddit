@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34396DC01BCDE5A8002B2498 /* CORedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34396DBE1BCDE5A8002B2498 /* CORedditAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		34396DC11BCDE5A8002B2498 /* CORedditPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34396DBF1BCDE5A8002B2498 /* CORedditPost.swift */; settings = {ASSET_TAGS = (); }; };
 		34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */; };
 		34ADA1EB1BC9B82B000EE243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1E91BC9B82B000EE243 /* Main.storyboard */; };
 		34ADA1ED1BC9B82B000EE243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */; };
@@ -16,8 +18,6 @@
 		34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		34ADA2171BC9BEF9000EE243 /* COFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		34ADA2191BCA09D4000EE243 /* COFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA2181BCA09D4000EE243 /* COFeedCell.swift */; settings = {ASSET_TAGS = (); }; };
-		34ADA21C1BCB60CA000EE243 /* CORedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA21B1BCB60CA000EE243 /* CORedditAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		34ADA21E1BCB6641000EE243 /* CORedditPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA21D1BCB6641000EE243 /* CORedditPost.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34396DBE1BCDE5A8002B2498 /* CORedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditAPI.swift; sourceTree = "<group>"; };
+		34396DBF1BCDE5A8002B2498 /* CORedditPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditPost.swift; sourceTree = "<group>"; };
 		34ADA1E21BC9B82B000EE243 /* COReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34ADA1EA1BC9B82B000EE243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		34ADA2141BC9BE8F000EE243 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COFeedViewController.swift; sourceTree = "<group>"; };
 		34ADA2181BCA09D4000EE243 /* COFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COFeedCell.swift; sourceTree = "<group>"; };
-		34ADA21B1BCB60CA000EE243 /* CORedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditAPI.swift; sourceTree = SOURCE_ROOT; };
-		34ADA21D1BCB6641000EE243 /* CORedditPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditPost.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 				34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */,
 				34ADA2181BCA09D4000EE243 /* COFeedCell.swift */,
 				34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */,
-				34ADA21B1BCB60CA000EE243 /* CORedditAPI.swift */,
-				34ADA21D1BCB6641000EE243 /* CORedditPost.swift */,
+				34396DBE1BCDE5A8002B2498 /* CORedditAPI.swift */,
+				34396DBF1BCDE5A8002B2498 /* CORedditPost.swift */,
 				34ADA1E91BC9B82B000EE243 /* Main.storyboard */,
 				34ADA1EE1BC9B82B000EE243 /* LaunchScreen.storyboard */,
 				34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */,
@@ -278,9 +278,9 @@
 				34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */,
 				34ADA2191BCA09D4000EE243 /* COFeedCell.swift in Sources */,
 				34ADA2171BC9BEF9000EE243 /* COFeedViewController.swift in Sources */,
-				34ADA21E1BCB6641000EE243 /* CORedditPost.swift in Sources */,
+				34396DC11BCDE5A8002B2498 /* CORedditPost.swift in Sources */,
 				34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */,
-				34ADA21C1BCB60CA000EE243 /* CORedditAPI.swift in Sources */,
+				34396DC01BCDE5A8002B2498 /* CORedditAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
