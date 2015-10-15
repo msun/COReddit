@@ -57,6 +57,7 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
             cell.postID = post.postID
             cell.titleLabel.text = post.title
             cell.authorLabel.text = post.author
+            cell.heart.hidden = !post.isFavourited
 
             if let imageURLString = post.imageURL, imageURL = NSURL(string: imageURLString) {
                 let task = NSURLSession.sharedSession().dataTaskWithURL(imageURL) { (data, response, error) in
@@ -90,6 +91,22 @@ class COFeedViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let post = posts?[indexPath.row] {
+            post.isFavourited = !post.isFavourited
+            if let cell = tableView.cellForRowAtIndexPath(indexPath) as? COFeedCell {
+                cell.heart.hidden = !post.isFavourited
+            }
+        }
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "fav segue") {
+            if let vc = segue.destinationViewController as? COFavouritesViewController {
+                vc.posts = posts
+            }
+        }
+    }
+    
+    
 }

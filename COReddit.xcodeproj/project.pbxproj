@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		34396DC01BCDE5A8002B2498 /* CORedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34396DBE1BCDE5A8002B2498 /* CORedditAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		34396DC11BCDE5A8002B2498 /* CORedditPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34396DBF1BCDE5A8002B2498 /* CORedditPost.swift */; settings = {ASSET_TAGS = (); }; };
+		34396DC51BCEE5BF002B2498 /* COMaterialRippleControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 34396DC41BCEE5BF002B2498 /* COMaterialRippleControl.m */; settings = {ASSET_TAGS = (); }; };
+		34396DC71BCEF163002B2498 /* COFavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34396DC61BCEF163002B2498 /* COFavouritesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */; };
 		34ADA1EB1BC9B82B000EE243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1E91BC9B82B000EE243 /* Main.storyboard */; };
 		34ADA1ED1BC9B82B000EE243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ADA1EC1BC9B82B000EE243 /* Assets.xcassets */; };
@@ -40,6 +42,10 @@
 /* Begin PBXFileReference section */
 		34396DBE1BCDE5A8002B2498 /* CORedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditAPI.swift; sourceTree = "<group>"; };
 		34396DBF1BCDE5A8002B2498 /* CORedditPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CORedditPost.swift; sourceTree = "<group>"; };
+		34396DC21BCEE5BE002B2498 /* COReddit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "COReddit-Bridging-Header.h"; sourceTree = "<group>"; };
+		34396DC31BCEE5BF002B2498 /* COMaterialRippleControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COMaterialRippleControl.h; sourceTree = "<group>"; };
+		34396DC41BCEE5BF002B2498 /* COMaterialRippleControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COMaterialRippleControl.m; sourceTree = "<group>"; };
+		34396DC61BCEF163002B2498 /* COFavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = COFavouritesViewController.swift; path = COReddit/COFavouritesViewController.swift; sourceTree = "<group>"; };
 		34ADA1E21BC9B82B000EE243 /* COReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34ADA1EA1BC9B82B000EE243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,10 +91,12 @@
 		34ADA1D91BC9B82B000EE243 = {
 			isa = PBXGroup;
 			children = (
+				34396DC61BCEF163002B2498 /* COFavouritesViewController.swift */,
 				34ADA1E41BC9B82B000EE243 /* COReddit */,
 				34ADA1F91BC9B82B000EE243 /* CORedditTests */,
 				34ADA2041BC9B82B000EE243 /* CORedditUITests */,
 				34ADA1E31BC9B82B000EE243 /* Products */,
+				34396DC21BCEE5BE002B2498 /* COReddit-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +117,8 @@
 				34ADA1E51BC9B82B000EE243 /* AppDelegate.swift */,
 				34ADA2181BCA09D4000EE243 /* COFeedCell.swift */,
 				34ADA2161BC9BEF9000EE243 /* COFeedViewController.swift */,
+				34396DC31BCEE5BF002B2498 /* COMaterialRippleControl.h */,
+				34396DC41BCEE5BF002B2498 /* COMaterialRippleControl.m */,
 				34396DBE1BCDE5A8002B2498 /* CORedditAPI.swift */,
 				34396DBF1BCDE5A8002B2498 /* CORedditPost.swift */,
 				34ADA1E91BC9B82B000EE243 /* Main.storyboard */,
@@ -207,6 +217,7 @@
 		34ADA1DA1BC9B82B000EE243 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Matthew Sun";
 				TargetAttributes = {
@@ -275,9 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34396DC71BCEF163002B2498 /* COFavouritesViewController.swift in Sources */,
 				34ADA2151BC9BE8F000EE243 /* SwiftyJSON.swift in Sources */,
 				34ADA2191BCA09D4000EE243 /* COFeedCell.swift in Sources */,
 				34ADA2171BC9BEF9000EE243 /* COFeedViewController.swift in Sources */,
+				34396DC51BCEE5BF002B2498 /* COMaterialRippleControl.m in Sources */,
 				34396DC11BCDE5A8002B2498 /* CORedditPost.swift in Sources */,
 				34ADA1E61BC9B82B000EE243 /* AppDelegate.swift in Sources */,
 				34396DC01BCDE5A8002B2498 /* CORedditAPI.swift in Sources */,
@@ -422,11 +435,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = COReddit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.matthewsun.COReddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "COReddit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -434,11 +451,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = COReddit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.matthewsun.COReddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "COReddit-Bridging-Header.h";
 			};
 			name = Release;
 		};

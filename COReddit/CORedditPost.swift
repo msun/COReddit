@@ -14,4 +14,6 @@ class CORedditPost {
     var title: String?
     var author: String?
     var created: Int?
+
+    var isFavourited = false
 }
